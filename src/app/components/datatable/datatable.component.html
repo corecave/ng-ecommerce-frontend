@@ -1,0 +1,21 @@
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Product Name</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="products?.length != 0">
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.created_at }}</td>
+    </tr>
+  </tbody>
+  <tbody *ngIf="products?.length == 0">
+    <tr>
+      <td colspan="3" class="no-data-available">No data!</td>
+    </tr>
+  </tbody>
+</table>
